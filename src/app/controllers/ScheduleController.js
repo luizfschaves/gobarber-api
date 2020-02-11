@@ -12,7 +12,7 @@ class ScheduleController {
 
 		if (!isProvider) return res.status(401).json({ error: 'User is not provider.' });
 
-		const { date = new Date() } = req.query;
+		const { date = new Date().toISOString() } = req.query;
 
 		const parseDate = parseISO(date);
 
